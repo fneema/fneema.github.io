@@ -5,5 +5,5 @@ permalink: /about/
 nocomments: true
 ---
 
-Welcome to SWEATFREE LEARNING website!
+Welcome to my WEBSITE!
 
