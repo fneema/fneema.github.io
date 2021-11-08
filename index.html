@@ -1,163 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Faith Neema Benson Personal Webpage</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=ddivevice-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+---
+layout: default
+---
 
-</head>
-<body>
-<br>
+<div class="home">
+  <!-- <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a> -->
+  <h1 class="page-heading">Blog Post</h1>
 
-<div class="container">
-  <h3>Faith Neema Benson</h3>
-  <br>
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#about">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#projects">Projects</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#blog">Blog</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
-    </li>
-    
-  
-    <!-- <li class="nav-item">
-     // <a class="nav-link" data-toggle="tab" href="game.html" target="_blank">Game</a>
-    //</li> -->
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        
+        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
+
+        <div class="post-excerpt">
+          {%   if post.content contains site.excerpt_separator or post.content != post.excerpt %}{{ post.excerpt }}
+          {%   else %}{{ post.content | lstrip | split: "
+" | first }}{% endif %}
+          <p>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More &raquo;</a>
+          </p>
+        </div>
+      </li>
+    {% endfor %}
   </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div id="home" class="container tab-pane active"><br>
-    
-    <header class="jumbotron">
-        <div class="text-center">
-            <img src="photos/faith_portrait.jpg" class="rounded-circle" alt="Cinque Terre" width="240" height="240"> 
-            <h1><span class="faith" ><font color = 'blue'>Faith Neema Benson </font></span> </h1>
-            <div><p align = 'justify'>
-            <blockquote>  Currently, I am a Data Science Fellow at AIMS-Ishango.ai, Rwanda. I hold a Master of Science degree in Mathematical Sciences from University of Cape Town, South Africa. 
-              I pursued a master degree in Machine Intelligence from African Institute for Mathematical Sciences, Ghana. I obtained my bachelor degree in Mathematics from Maasai mara University, Kenya.</blockquote>
-            </p></div>  
-            <p><h3><i>Welcome to my WEBSITE!!</i></h3></p>
-            <!-- <div class="container">
-                <button type="button" class="btn btn-primary btn-lg">Mathematics</button>
-                <button type="button" class="btn btn-primary active btn-lg"> Machine Learning</button>
-                <button type="button" class="btn btn-primary btn-lg"> Computer Vision</button>
-            </div> -->
-
-            
-<table style="width:95%">
-  <tr>
-    
-  <th><button type="button" class="btn btn-primary btn-lg">Domain of Interest</button>
-  </th><br>
-    
-  <th><button type="button" class="btn btn-primary btn-lg">Hobbies</button>
-  </th><br> 
-  <th><button type="button" class="btn btn-primary btn-lg">Address </th><br>
-  </tr>
-  <tr>
-   <td>- Machine Learning</td>
-   <td>- Listening to Inspirational Talks</td>
-   <td> AIMS Rwanda Centre,</td> 
-   , 
-  </tr>
-  <tr> <td> - Deep Learning</td>
-    <td> -  </td>
-    <td> Sector Remera,</td>
   
-  </tr>
-  <tr>
-    <td>- Computer Vision </td>
-    <td>- Listening to Gospel Music</td>
-    <td> KN 3 Kigali,</td>
-    
-  </tr>
-  <tr>
-    <td>- Applied Mathematics</td>
-    <td>- Dancing</td>
-    <td> Rwanda </td>
-
-  </tr>
-  <tr>
-    <!-- <td>- Computer Vision</td> -->
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-
-<div class="jumbotron text-center">
-  <h2>Contact</h2>
-  <a href="https://www.linkedin.com/in/faith-neema-3a02b2125/" target="_blank" class="fa fa-linkedin"></a>
-  <!-- <a href="https://github.com/fneema" target="_blank" class="fa fa-github"></a> -->
-  
-
- 
-        
-            
-   <div id="Projects" class="container tab-pane fade"><br>
-      <div class="jumbotron text-center">
-        <h2>Coming soon &#128525</h2>
-        
-      </div>
-    </div>
-  <div id="contact" class="container tab-pane fade"><br>
-      
-    <!-- <h3>Menu 4</h3> -->
-    <!-- Contact -->
-<section id="contact" class="contact container-fluid jumbotron">
-  <div class="contact-info">
-    <div class="contact-heading  text-center">
-        <!-- <h4>Please Sent me a mail</h4> -->
-      <h5>Sent me a Message</h5>
-    </div>
-    <form action="mailto:fbenson@aimsammi.org" method="post" enctype="text/plain">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" placeholder="Name" important>
-      </div>
-      <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" id="email" class="form-control" placeholder="Email" important>
-      </div>
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea class="form-control" rows="1" placeholder="Enter your message here..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
-    </form>
-  </div>
-</section>
-    </div>
-    <div id="Blog" class="container tab-pane fade"><br>
-       <div class="jumbotron text-center">
-        <h2>Coming soon &#128525</h2>
-         
-    </div>
-      </div>
-      
-  
-          
-        </div>
-        </div>
-</body>
+  <!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">PREV</a>
+  {% else %}
+    <span class="previous">PREV</span>
+  {% endif %}
+  <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">NEXT</a>
+  {% else %}
+    <span class="next ">NEXT</span>
+  {% endif %}
 </div>
-</html>
+
+</div>
 © 2021 GitHub, Inc.
 Terms
-
-</div>
+Priva
 
